@@ -12,8 +12,8 @@
 </form>
 <br>
 <form action="/create-beer" method="post">
-    <input type="text" name="name" placeholder="Name"/>
     <input type="text" name="brewery" placeholder="Brewery"/>
+    <input type="text" name="name" placeholder="Beer"/>
     <input type="text" name="type" placeholder="Type"/>
     <input type="text" name="comment" placeholder="Comment"/>
     <input type="hidden" name="id" value="{{id}}"/>
@@ -25,15 +25,18 @@
 <ol>
     {{#beers}}
     <li>
-        <b>{{name}}</b> - {{brewery}} - {{type}} - {{rating}} - {{comment}}
+        <b>{{brewery}}</b> <b>{{name}}</b> - {{type}} | Comments: {{comment}}.
+        <br>
         <form action="/delete-beer" method="post">
             <input type="hidden" name="id" value="{{id}}"/>
             <button type="submit">Remove Beer</button>
         </form>
+        <br>
         <form action="/edit-beer" method="post">
             <input type="hidden" name="id" value="{{id}}"/>
             <a href="/edit-beer?id={{id}}">Edit Beer</a>
         </form>
+        <br>
     </li>
     {{/beers}}
 
