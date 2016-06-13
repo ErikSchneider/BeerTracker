@@ -67,8 +67,8 @@ public class Main {
                     Drinker drinker = drinkers.get(username);
 
                     Beer beer = new Beer();
-                    beer.setName(request.queryParams("name"));
                     beer.setBrewery(request.queryParams("brewery"));
+                    beer.setName(request.queryParams("name"));
                     beer.setType(request.queryParams("type"));
                     beer.setComment(request.queryParams("comment"));
                     beer.setId(drinker.beers.size());
@@ -106,8 +106,8 @@ public class Main {
 
                     int id = Integer.valueOf(request.queryParams("id"));
                     Beer beer = drinker.beers.get(id);
-                    beer.setName(request.queryParams("newName"));
                     beer.setBrewery(request.queryParams("newBrewery"));
+                    beer.setName(request.queryParams("newName"));
                     beer.setType(request.queryParams("newType"));
                     beer.setComment(request.queryParams("newComment"));
                     response.redirect("/");
