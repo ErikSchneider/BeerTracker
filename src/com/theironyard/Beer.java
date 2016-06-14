@@ -18,7 +18,7 @@ public class Beer {
         this.id = id;
     }
 
-    public Beer() {
+    public Beer(String name, String brewery, String type, String comment) {
 
     }
 
