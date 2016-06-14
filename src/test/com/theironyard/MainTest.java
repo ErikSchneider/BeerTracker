@@ -43,7 +43,14 @@ public class MainTest {
     @Test
     public void testUpdate() throws SQLException {
         Connection conn = startConnection();
-
+        Main.insertDrinker(conn, "Erik", "");
+        Drinker drinker = Main.selectDrinker(conn, "Erik");
+        Main.insertBeer(conn,"Highlife", "Miller", "Lager", "Cheap", 1);
+        Main.updateBeer(conn, "Budweiser", "Anheuser–Busch", "Lager", "Bud Heavy", 1);
+        Beer beer = Main.selectBeer(conn, 1);
+        conn.close();
+        assertTrue(drinker != null);
+        assertTrue(beer.name.equals("Budweiser"));
     }
 
 }
