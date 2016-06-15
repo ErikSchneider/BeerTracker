@@ -121,6 +121,7 @@ public class Main {
                     else {
                         Drinker drinker = selectDrinker(conn, username);
                         m.put("beers", selectBeers(conn, drinker.id));
+                        m.put("username", username);
                         return new ModelAndView(m, "home.html");
                     }
                 },
